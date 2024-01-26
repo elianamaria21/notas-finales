@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notas finales</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        input[type="number"] {
+            border: none;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notas finales</h1>
+    <div id="info">
+        
+        <p>Nombre: <span id="nombreAlumno">
+        </span></p>
+        <p>Carrera: <span id="carrera">Desarrollo Web</span></p>
+    </div>
+    <table>
+        <tr>
+            <th rowspan="2">Ramo</th>
+            <th colspan="3">Notas</th>
+            <th rowspan="2">Promedio</th>
+        </tr>
+        <tr>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Nota 3</th>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td id="nota1a1"></td>
+            <td id="nota2a1"></td>
+            <td id="nota3a1"></td>
+            <td><span id="promedioa1"></span></td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td  id="nota1a2"></td>
+            <td  id="nota2a2"></td>
+            <td  id="nota3a2"></td>
+            <td><span id="promedioa2"></span></td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td id="nota1a3"></td>
+            <td id="nota2a3"></td>
+            <td id="nota3a3"></td>
+            <td><span id="promedioa3"></span></td>
+        </tr>
+    </table>
+    <button onclick="calcularPromedio()">Calcular promedio</button>
+    <script>
+        nombreAlumno = prompt("Ingrese nombre del alumno:");
+        document.getElementById("nombreAlumno").innerHTML = nombreAlumno;
+
+        function calcularPromedio() {
+            // Obtener las notas de cada asignatura
+            let nota1a1 = parseFloat(prompt("Ingresa la nota 1 de la HTML 1"));
+            document.getElementById("nota1a1").innerHTML = nota1a1;
+            console.log(nota1a1);
+            let nota2a1 = parseFloat(prompt("Ingresa la nota 2 de la HTML 1"));
+            document.getElementById("nota2a1").innerHTML = nota2a1;
+            console.log(nota2a1);
+            let nota3a1 = parseFloat(prompt("Ingresa la nota 3 de la HTML 1"));
+            document.getElementById("nota3a1").innerHTML = nota3a1;
+            console.log(nota3a1);
+            let nota1a2 = parseFloat(prompt("Ingresa la nota 1 de la CSS 2"));
+            document.getElementById("nota1a2").innerHTML = nota1a2;
+            console.log(nota1a2);
+            let nota2a2 = parseFloat(prompt("Ingresa la nota 2 de la CSS 2"));
+            document.getElementById("nota2a2").innerHTML = nota2a2;
+            console.log(nota2a2);
+            let nota3a2 = parseFloat(prompt("Ingresa la nota 3 de la CSS 2"));
+            document.getElementById("nota3a2").innerHTML = nota3a2;
+            console.log(nota3a2);
+            let nota1a3 = parseFloat(prompt("Ingresa la nota 1 de la JS 3"));
+            document.getElementById("nota1a3").innerHTML = nota1a3;
+            console.log(nota1a3);
+            let nota2a3 = parseFloat(prompt("Ingresa la nota 2 de la JS 3"));
+            document.getElementById("nota2a3").innerHTML = nota2a3;
+            console.log(nota2a3);
+            let nota3a3 = parseFloat(prompt("Ingresa la nota 3 de la JS 3"));
+            document.getElementById("nota3a3").innerHTML = nota3a3;
+            console.log(nota3a3);
+            // Calcular el promedio de cada asignatura
+            let promedioa1 = (nota1a1 + nota2a1 + nota3a1) / 3;
+            let promedioa2 = (nota1a2 + nota2a2 + nota3a2) / 3;
+            let promedioa3 = (nota1a3 + nota2a3 + nota3a3) / 3;
+
+            // Mostrar el promedio de cada asignatura
+            document.getElementById("promedioa1").innerHTML = promedioa1.toFixed(2);
+            document.getElementById("promedioa2").innerHTML = promedioa2.toFixed(2);
+            document.getElementById("promedioa3").innerHTML = promedioa3.toFixed(2);
+        }
+    </script>
+</body>
+</html>
